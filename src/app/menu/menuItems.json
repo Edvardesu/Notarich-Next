@@ -1,0 +1,22 @@
+{
+  "popularMenuItems": [
+    {
+      "name": "Caffe Latte",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/cafelatte.jpg"
+    },
+    {
+      "name": "Caffe Latte",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/cafelatte.jpg"
+    },
+    {
+      "name": "Caramel Frappucino",
+      "description": "Kopi, krim, dan sirup karamel",
+      "price": "22K",
+      "image": "../../../public/menu/caramelfrappucino.jpg"
+    }
+  ]
+}

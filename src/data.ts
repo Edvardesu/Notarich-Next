@@ -201,9 +201,6 @@ export const featuredProducts: Products = [
   },
 ];
 
-
-
-
 export const pizzas: Products = [
   {
     id: 1,
@@ -354,7 +351,6 @@ export const singleProduct: Product = {
     },
   ],
 };
-
 
 type Menu = {
   id: number;
