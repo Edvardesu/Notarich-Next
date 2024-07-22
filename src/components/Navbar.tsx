@@ -59,7 +59,7 @@ const Navbar = () => {
           <Link href="/menu/all" className={`hover:text-yellow-300 mr-20 `}>
             Menu
           </Link>
-          <Link href="/bookingPage" className={`hover:text-yellow-300 mr-20 `}>
+          <Link href="/booking" className={`hover:text-yellow-300 mr-20 `}>
             Booking
           </Link>
           <UserLinks />

@@ -16,6 +16,14 @@ export type ProductType = {
   options?: { title: string; additionalPrice: number }[];
 };
 
+export type KursiType = {
+  id: string;
+  createdAt: Date;
+  title: string;
+  lantai: string;
+  statusKursi: string;
+};
+
 export type OrderType = {
   id: string;
   userEmail: string;
@@ -25,6 +33,17 @@ export type OrderType = {
   createdAt: Date;
   intent_id?: String;
 };
+
+export type BookingType = {
+  id:      string;
+  createdAt: Date; 
+  kursis:  KursiType[];
+  tanggalWaktu: Date;
+  durasi:  number;
+  statusBooking:  string;
+  intent_id?: string;
+  userEmail: string;
+}
 
 export type CartItemType = {
   id: string;

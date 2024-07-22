@@ -25,21 +25,27 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <AuthProvider>
-          <QueryProvider>
-            <div>
-              {/* <Notification /> */}
-              <Navbar />
-              {children}
-              <Footer />
-              <ToastContainer
-                position="bottom-right"
-                theme="dark"
-                autoClose={3000}
-              />
+        <div className="flex w-full ">
+          <Fragment>
+            <div className="flex flex-initial justify-center items-center font-jakarta_sans">
+              <div className="flex flex-col">
+                <AuthProvider>
+                  <QueryProvider>
+                    {/* <Notification /> */}
+                    <Navbar />
+                    {children}
+                    <Footer />
+                    <ToastContainer
+                      position="bottom-right"
+                      theme="dark"
+                      autoClose={3000}
+                    />
+                  </QueryProvider>
+                </AuthProvider>
+              </div>
             </div>
-          </QueryProvider>
-        </AuthProvider>
+          </Fragment>
+        </div>
       </body>
     </html>
   );

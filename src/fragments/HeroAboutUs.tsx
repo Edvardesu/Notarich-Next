@@ -18,7 +18,7 @@ const HeroAboutUs = () => {
               </p>
             </div>
             <div className="flex flex-row mt-20">
-              <Link href={"/bookingPage"}>
+              <Link href={"/booking"}>
                 <button className="flex flex-row text-white text-xl font-light bg-[#FF8A00] border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-3 px-8">
                   <Image
                     src="/table.png"
