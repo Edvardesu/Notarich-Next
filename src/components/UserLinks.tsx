@@ -9,14 +9,23 @@ const UserLinks = () => {
     <>
       {status === "authenticated" ? (
         <>
-          {session?.user.isAdmin && <Link href="/orders">Orders</Link>}
+          {session?.user.isAdmin && (
+            <>
+              <Link href="/orders" className={`hover:text-yellow-300 mr-20 `}>
+                Orders
+              </Link>
+              <Link href="/bookings" className={`hover:text-yellow-300 `}>Bookings</Link>
+            </>
+          )}
 
-          <span className="mx-20 cursor-pointer" onClick={() => signOut()}>
+          <span className="mr-20 cursor-pointer" onClick={() => signOut()}>
             Logout
           </span>
         </>
       ) : (
-        <Link className="mr-20" href="/login">Login</Link>
+        <Link className="mr-20" href="/login">
+          Login
+        </Link>
       )}
     </>
   );

@@ -1,28 +1,54 @@
-import HeroMenu from "@/fragments/HeroMenu";
-import { MenuType } from "@/types/types";
-import Link from "next/link";
-import React, { Fragment, useState } from "react";
+"use client";
+import React, { Fragment, useEffect } from "react";
 import Image from "next/image";
-import ButtonComponent from "./ButtonComponent";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import Bookinge from "./Bookinge";
 
-const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
-    cache: "no-store",
-  });
+const BookingPage = () => {
+  const { data: session, status } = useSession();
+  const router = useRouter();
 
-  if (!res.ok) {
-    throw new Error("Failed!");
-  }
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/login");
+    } else if (status === "authenticated" && session?.user?.isAdmin) {
+      router.push("/");
+    }
+  }, [status, session, router]);
 
-  return res.json();
-};
+  const handleCheckout = async () => {
+    if (!session) {
+      router.push("/login");
+    } else {
+      try {
+        const res = await fetch("/api/bookings", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            kursis: [{ title: "1_1", lantai: "1" }],
+            tanggalWaktu: new Date().toISOString(),
+            durasi: 120,
+            statusBooking: "waiting",
+            userEmail: session.user.email,
+          }),
+        });
 
-const BookingPage = async () => {
-  const menu: MenuType = await getData();
+        if (!res.ok) {
+          throw new Error("Failed to create booking");
+        }
+
+        const data = await res.json();
+        console.log("Booking created:", data);
+        router.push(`/menu/all`);
+      } catch (err) {
+        console.error(err);
+      }
+    }
+  };
 
   return (
-    <div className="flex w-full ">
+    <div className="flex w-full">
       <Fragment>
         <div className="flex flex-initial justify-center items-center font-jakarta_sans">
           <div className="flex flex-col">
@@ -32,6 +58,12 @@ const BookingPage = async () => {
                   <p className="text-7xl font-normal text-black px-12">
                     Reserve your table today!
                   </p>
+                  <button
+                    onClick={handleCheckout}
+                    className="bg-orange-400 px-2 py-1"
+                  >
+                    Confirm Reservation
+                  </button>
                 </div>
                 <div className="w-full grid grid-cols-4 px-12">
                   <div className="flex flex-col items-center text-center">

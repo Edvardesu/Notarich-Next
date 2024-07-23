@@ -1,6 +1,6 @@
 "use client";
 
-import { OrderType } from "@/types/types";
+import { BookingType } from "@/types/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "react-toastify";
 
-const OrdersPage = () => {
+const BookingsPage = () => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
@@ -17,25 +17,25 @@ const OrdersPage = () => {
   }
 
   const { isLoading, error, data } = useQuery({
-    queryKey: ["orders"],
+    queryKey: ["bookings"],
     queryFn: () =>
-      fetch("http://localhost:3000/api/orders").then((res) => res.json()),
+      fetch("http://localhost:3000/api/bookings").then((res) => res.json()),
   });
 
   const queryClient = useQueryClient();
 
   const mutation = useMutation({
-    mutationFn: ({ id, statusOrder }: { id: string; statusOrder: string }) => {
-      return fetch(`http://localhost:3000/api/orders/${id}`, {
+    mutationFn: ({ id, statusBooking }: { id: string; statusBooking: string }) => {
+      return fetch(`http://localhost:3000/api/bookings/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(statusOrder),
+        body: JSON.stringify(statusBooking),
       });
     },
     onSuccess() {
-      queryClient.invalidateQueries({ queryKey: ["orders"] });
+      queryClient.invalidateQueries({ queryKey: ["bookings"] });
     },
   });
 
@@ -43,9 +43,9 @@ const OrdersPage = () => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const input = form.elements[0] as HTMLInputElement;
-    const statusOrder = input.value;
+    const statusBooking = input.value;
 
-    mutation.mutate({ id, statusOrder });
+    mutation.mutate({ id, statusBooking });
     toast.success("The order status has been changed!");
   };
 
@@ -56,7 +56,7 @@ const OrdersPage = () => {
       <table className="w-full border-separate border-spacing-3">
         <thead>
           <tr className="text-left">
-            <th className="hidden md:block">Order ID</th>
+            <th className="hidden md:block">Book ID</th>
             <th>Date</th>
             <th>User</th>
             <th>Price</th>
@@ -65,21 +65,19 @@ const OrdersPage = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item: OrderType) => (
-            <tr
-              className={`${item.statusOrder !== "delivered" && "bg-red-50"}`}
-              key={item.id}
-            >
+          {data.map((item: BookingType) => (
+            <tr className={`${item.statusBooking !== "delivered" && "bg-red-50"}`} key={item.id}>
               <td className="hidden md:block py-6 px-1">{item.id}</td>
               <td className="py-6 px-1">
                 {item.createdAt.toString().slice(0, 10)}
               </td>
               <td className="py-6 px-1">{item.userEmail}</td>
-              <td className="py-6 px-1">Rp{item.price}000</td>
+              <td className="py-6 px-1">{item.durasi}</td>
               <td className="hidden md:block py-6 px-1">
-                {item.products.map((product: any) => (
+                {item.kursis.map((product: any) => (
                   <div key={product.id}>
-                    {product.title} (Quantity: {product.quantity})
+                    Kursi: {product.title} <br></br>
+                    Lantai: {product.lantai}
                   </div>
                 ))}
               </td>
@@ -90,7 +88,7 @@ const OrdersPage = () => {
                     onSubmit={(e) => handleUpdate(e, item.id)}
                   >
                     <input
-                      placeholder={item.statusOrder}
+                      placeholder={item.statusBooking}
                       className="p-2 ring-1 ring-red-100 rounded-md"
                     />
                     <button className="bg-red-400 p-2 rounded-full">
@@ -99,7 +97,7 @@ const OrdersPage = () => {
                   </form>
                 </td>
               ) : (
-                <td className="py-6 px-1">{item.statusOrder}</td>
+                <td className="py-6 px-1">{item.statusBooking}</td>
               )}
             </tr>
           ))}
@@ -109,4 +107,4 @@ const OrdersPage = () => {
   );
 };
 
-export default OrdersPage;
+export default BookingsPage;

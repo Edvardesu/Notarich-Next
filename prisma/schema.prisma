@@ -80,7 +80,7 @@ model Product {
   options    Json[]
   category   Category @relation(fields: [catSlug], references: [slug])
   catSlug    String
-  statusProd String
+  statusProd String @default("available")
 }
 
 model Kursi {
@@ -88,7 +88,7 @@ model Kursi {
   createdAt  DateTime @default(now())
   title      String
   lantai     String
-  statusKursi     String
+  statusKursi     String @default("available")
 }
 
 model Order {
@@ -96,7 +96,7 @@ model Order {
   createdAt DateTime @default(now())
   price     Decimal
   products  Json[]
-  status    String
+  statusOrder    String @default("waiting")
   intent_id String?  @unique
   user      User     @relation(fields: [userEmail], references: [email])
   userEmail String
@@ -108,7 +108,7 @@ model Booking {
   kursis  Json[]
   tanggalWaktu DateTime
   durasi  Int
-  statusBooking    String
+  statusBooking    String @default("waiting")
   intent_id String?  @unique
   user      User     @relation(fields: [userEmail], references: [email])
   userEmail String

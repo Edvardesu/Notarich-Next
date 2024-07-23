@@ -10,14 +10,14 @@ export const PUT = async (
   try {
     const body = await req.json();
 
-    await prisma.order.update({
+    await prisma.booking.update({
       where: {
         id: id,
       },
-      data: { statusOrder: body },
+      data: { statusBooking: body },
     });
     return new NextResponse(
-      JSON.stringify({ message: "Order has been updated!" }),
+      JSON.stringify({ message: "Booking has been updated!" }),
       { status: 200 }
     );
   } catch (err) {

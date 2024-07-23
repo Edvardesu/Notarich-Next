@@ -14,6 +14,7 @@ export type ProductType = {
   img?: string;
   price: number;
   options?: { title: string; additionalPrice: number }[];
+  statusProd: string;
 };
 
 export type KursiType = {
@@ -29,7 +30,7 @@ export type OrderType = {
   userEmail: string;
   price: number;
   products: CartItemType[];
-  status: string;
+  statusOrder: string;
   createdAt: Date;
   intent_id?: String;
 };
