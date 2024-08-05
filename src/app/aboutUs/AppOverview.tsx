@@ -45,32 +45,32 @@ const AppOverview = () => {
             Reservation
           </p>
         </div>
-        <div className="w-full grid grid-cols-4 gap-16 px-40">
-          <div className="flex flex-col text-center">
-            <div className="bg-[#212121]  rounded-xl">
-              <Image width={500} height={500} src="/booking.png" alt="" />
+        <div className="w-full xs:flex xs:flex-col lg:grid lg:grid-cols-4 lg:gap-16 lg:px-40">
+          <div className="flex flex-col text-center items-center">
+            <div className="bg-[#212121] flex rounded-xl w-96 h-80">
+              <Image width={802} height={672} src="/booking.png" alt=""/>
             </div>
             <p className="text-xl mt-4">Pilih meja yang ingin Anda pesan</p>
           </div>
-          <div className="flex flex-col text-center">
-            <div className="bg-[#212121] rounded-xl">
-              <Image width={290} height={290} src="/pesen.png" alt="" />
+          <div className="flex flex-col text-center items-center">
+            <div className="bg-[#212121] flex rounded-xl w-96 h-80">
+              <Image width={648} height={631} src="/pesen.png" alt="" />
             </div>
             <p className="text-xl mt-4">
               Anda juga dapat sekaligus memesan menu
             </p>
           </div>
-          <div className="flex flex-col text-center">
-            <div className="bg-[#212121] rounded-xl">
-              <Image width={500} height={500} src="/payonline.png" alt="" />
+          <div className="flex flex-col text-center items-center">
+            <div className="bg-[#212121] flex rounded-xl w-96 h-80">
+              <Image width={820} height={592} src="/payonline.png" alt="" />
             </div>
             <p className="text-xl mt-4">
               Bayar dengan dompet digital kesayangan Anda
             </p>
           </div>
-          <div className="flex flex-col text-center">
-            <div className="bg-[#212121] ounded-xl">
-              <Image width={260} height={260} src="/servis.png" alt="" />
+          <div className="flex flex-col text-center items-center">
+            <div className="bg-[#212121] flex rounded-xl w-96 h-80">
+              <Image width={532} height={572} src="/servis.png" alt="" />
             </div>
             <p className="text-xl mt-4">Enjoy your service!</p>
           </div>

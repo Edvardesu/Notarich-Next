@@ -24,7 +24,7 @@ const FormLogin = () => {
     login(data, (status, res) => {
       if (status) {
         localStorage.setItem("token", res);
-        window.location.href = "/menuPage";
+        window.location.href = "/menu/all";
       } else {
         setLoginFailed(res.response.data);
       }
@@ -39,6 +39,7 @@ const FormLogin = () => {
     <form onSubmit={handleLogin} className="mt-8">
       <InputForm
         label="username"
+        labelForm="Username"
         type="text"
         placeholder="John Doe"
         name="username"
@@ -47,6 +48,7 @@ const FormLogin = () => {
       <div className="mt-4 relative">
         <InputForm
           label="Password"
+          labelForm="Password"
           type={passwordVisible ? "text" : "password"}
           placeholder="*****"
           name="password"
@@ -61,7 +63,7 @@ const FormLogin = () => {
       </div>
       {/* {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>} */}
       <button
-        className="mt-6 w-full bg-gray-700 text-white font-bold py-3 px-4 rounded-md"
+        className="mt-6 w-full bg-[#FF8A00] text-white font-bold py-3 px-4 rounded-full"
         type="submit"
       >
         Login

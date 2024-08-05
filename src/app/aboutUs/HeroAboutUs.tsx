@@ -7,17 +7,17 @@ const HeroAboutUs = () => {
     <div className="w-full -mt-40 pt-48 pb-48 bg-hero-pattern rounded-bl-[200px]">
       <div className="flex flex-row w-full bg-opacity-80">
         <div className="w-3/4 flex flex-col ">
-          <div className="pt-20 pl-32">
-            <div className="text-white font-semibold text-7xl">
+          <div className="pt-20 xs:pl-20 lg:pl-32">
+            <div className="text-white xs:font-medium lg:font-semibold text-7xl">
               Everyday is a Coffee Day!
             </div>
-            <div className="text-white font-light text-2xl pr-96 mt-8 ">
+            <div className="text-white font-light text-2xl lg:pr-96 mt-8">
               <p>
                 Boost your productivity and build your mood with a glass of
                 coffee at Notarich.
               </p>
             </div>
-            <div className="flex flex-row mt-20">
+            <div className="flex xs:flex-col lg:flex-row mt-20">
               <Link href={"/booking"}>
                 <button className="flex flex-row text-white text-xl font-light bg-[#FF8A00] border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-3 px-8">
                   <Image
@@ -30,8 +30,8 @@ const HeroAboutUs = () => {
                   <p className="ml-4">Booking Table</p>
                 </button>
               </Link>
-              <Link href={"/menuPage"}>
-                <button className="flex flex-row text-white text-xl font-light bg-[#FF8A00] bg-opacity-50 border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-3 px-11 ml-8">
+              <Link href={"/menu/all"}>
+                <button className="flex flex-row text-white text-xl font-light bg-[#FF8A00] bg-opacity-50 border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-3 px-11 xs:mt-8 lg:mt-0 lg:ml-8">
                   <Image
                     src="/bottle.png"
                     alt=""
@@ -45,7 +45,7 @@ const HeroAboutUs = () => {
             </div>
           </div>
         </div>
-        <div className="w-1/2 flex flex-col">
+        <div className="w-1/2 hidden lg:block flex-col">
           <div className="mt-40 border-b-2 border-[#FF8A00]">
             <Image src="/coffee.png" width={800} height={800} alt="" />
           </div>

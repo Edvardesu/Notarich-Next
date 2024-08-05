@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme')
 module.exports = {
   content: [
     "./index.html",
@@ -9,15 +10,20 @@ module.exports = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    screens: {
+      xs: "430px",
+      ...defaultTheme.screens,
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-pattern": "url('../../public/bg-hero1.png')",
-        "howtomake": "url('../../public/bg-howtomake.png') ",
+        howtomake: "url('../../public/bg-howtomake.png') ",
         "try-howtomake": "url('../../public/try-bghowtomake.png') ",
         "heromenu-pattern": "url('../../public/bg-heromenu.png')",
-        "login": "url('../../public/login2.png')",
+        login: "url('../../public/login2.png')",
       },
     },
     fontFamily: {

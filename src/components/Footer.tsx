@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="w-full flex flex-col bg-hero-pattern rounded-tl-[200px] pt-12 pb-4 mt-20">
+    <div className=" bg-hero-pattern rounded-tl-[200px] pt-12 pb-4">
       <div className="flex flex-row mb-10">
         <div className="w-1/2 flex flex-col pl-20 mt-16 items-center">
           <div className="mb-4 h-40 w-40 overflow-hidden rounded-full">
@@ -25,8 +25,9 @@ const Footer = () => {
               <Image
                 src="/sun.png"
                 alt=""
-                width={12}
-                height={12}
+                width={66}
+                height={66}
+                className="w-12 h-12"
               />
               <div className="flex flex-col ml-6 justify-center">
                 <p className=" text-white ">Monday - Sunday</p>
@@ -37,8 +38,9 @@ const Footer = () => {
               <Image
                 src="/pin.png"
                 alt=""
-                width={12}
-                height={12}
+                width={57}
+                height={80}
+                className="w-12 h-12"
               />
               <div className="flex flex-col ml-10 mr-48 justify-center">
                 <p className=" text-white leading-none">
@@ -51,8 +53,8 @@ const Footer = () => {
               <Image
                 src="/tilpun.png"
                 alt=""
-                width={12}
-                height={12}
+                width={66}
+                height={66}
                 className="w-12 h-12"
               />
               <div className="flex flex-col ml-6 justify-center">
@@ -63,8 +65,8 @@ const Footer = () => {
               <Image
                 src="/ig.png"
                 alt=""
-                width={12}
-                height={12}
+                width={73}
+                height={73}
                 className="w-12 h-12"
               />
               <div className="flex flex-col ml-6  justify-center">
@@ -78,10 +80,10 @@ const Footer = () => {
           <a className="mb-6 text-justify" href="/">
             About us
           </a>
-          <a className="mb-6 text-justify" href="/menuPage">
+          <a className="mb-6 text-justify" href="/menu/all">
             Menu
           </a>
-          <a className="mb-6 text-justify" href="/bookingPage">
+          <a className="mb-6 text-justify" href="/booking">
             Booking
           </a>
         </div>

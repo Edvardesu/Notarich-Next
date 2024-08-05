@@ -1,7 +1,7 @@
 "use client";
 import Footer from "@/components/Footer";
-import AppOverview from "@/fragments/AppOverview";
-import HeroAboutUs from "@/fragments/HeroAboutUs";
+import AppOverview from "@/app/aboutUs/AppOverview";
+import HeroAboutUs from "@/app/aboutUs/HeroAboutUs";
 import { useCartStore } from "@/utils/store";
 import Image from "next/image";
 import React, { Fragment, useEffect } from "react";

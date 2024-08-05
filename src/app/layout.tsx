@@ -1,3 +1,5 @@
+"use client"; // Add this directive at the top
+
 import Notification from "@/components/Notification";
 import "./globals.css";
 import type { Metadata } from "next";
@@ -8,7 +10,8 @@ import AuthProvider from "@/components/AuthProvider";
 import QueryProvider from "@/components/QueryProvider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Fragment, useState, useEffect } from "react";
+import { Fragment } from "react";
+import { usePathname } from "next/navigation"; // Import usePathname
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,19 +25,22 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname(); // Use usePathname hook
+  const showNavbarFooter = pathname !== "/login"; // Check if current path is not /login
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex w-full ">
+        <div className="flex w-full">
           <Fragment>
             <div className="flex flex-initial justify-center items-center font-jakarta_sans">
               <div className="flex flex-col">
                 <AuthProvider>
                   <QueryProvider>
                     {/* <Notification /> */}
-                    <Navbar />
+                    {showNavbarFooter && <Navbar />}
                     {children}
-                    <Footer />
+                    {showNavbarFooter && <Footer />}
                     <ToastContainer
                       position="bottom-right"
                       theme="dark"

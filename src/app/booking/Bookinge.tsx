@@ -44,7 +44,7 @@ const Bookinge = () => {
               <input
                 type="radio"
                 name="floor"
-                value="Lantai 1"
+                value="1"
                 checked={selectedFloor === "Lantai 1"}
                 onChange={() => setSelectedFloor("Lantai 1")}
                 className="checked:bg-[#FF8A00] "
@@ -55,7 +55,7 @@ const Bookinge = () => {
               <input
                 type="radio"
                 name="floor"
-                value="Lantai 2"
+                value="2"
                 checked={selectedFloor === "Lantai 2"}
                 onChange={() => setSelectedFloor("Lantai 2")}
                 className="checked:bg-[#FF8A00]"
@@ -83,14 +83,14 @@ const Bookinge = () => {
                     <div className="flex flex-col justify-center items-center mx-4">
                       <div className="grid grid-cols-3 gap-2 my-2">
                         <ButtonComponent
-                          id="btn1"
+                          id="1_1"
                           className="w-8 h-20 bg-yellow-500"
                           onClick={openPopup}
                         >
                           <p className="font-bold text-black">1</p>
                         </ButtonComponent>
                         <ButtonComponent
-                          id="btn2"
+                          id="1_2"
                           className="w-12 h-20 bg-gray-800"
                           onClick={openPopup}
                         >
@@ -98,14 +98,14 @@ const Bookinge = () => {
                         </ButtonComponent>
                         <div className="flex flex-col items-center gap-4">
                           <ButtonComponent
-                            id="btn3"
+                            id="1_3"
                             className="w-8 h-8 bg-yellow-500"
                             onClick={openPopup}
                           >
                             <p className="font-bold text-black">3</p>
                           </ButtonComponent>
                           <ButtonComponent
-                            id="btn4"
+                            id="1_4"
                             className="w-8 h-8 bg-yellow-500"
                             onClick={openPopup}
                           >
@@ -115,14 +115,14 @@ const Bookinge = () => {
                       </div>
                       <div className="grid grid-cols-3 gap-2 my-2">
                         <ButtonComponent
-                          id="btn5"
+                          id="1_5"
                           className="w-8 h-20 bg-yellow-500"
                           onClick={openPopup}
                         >
                           <p className="font-bold text-black">5</p>
                         </ButtonComponent>
                         <ButtonComponent
-                          id="btn6"
+                          id="1_6"
                           className="w-12 h-20 bg-gray-800"
                           onClick={openPopup}
                         >
@@ -130,14 +130,14 @@ const Bookinge = () => {
                         </ButtonComponent>
                         <div className="flex flex-col items-center gap-4">
                           <ButtonComponent
-                            id="btn7"
+                            id="1_7"
                             className="w-8 h-8 bg-yellow-500"
                             onClick={openPopup}
                           >
                             <p className="font-bold text-black">7</p>
                           </ButtonComponent>
                           <ButtonComponent
-                            id="btn8"
+                            id="1_8"
                             className="w-8 h-8 bg-yellow-500"
                             onClick={openPopup}
                           >
@@ -147,14 +147,14 @@ const Bookinge = () => {
                       </div>
                       <div className="grid grid-cols-3 gap-2 my-2">
                         <ButtonComponent
-                          id="btn9"
+                          id="1_9"
                           className="w-8 h-20 bg-yellow-500"
                           onClick={openPopup}
                         >
                           <p className="font-bold text-black">9</p>
                         </ButtonComponent>
                         <ButtonComponent
-                          id="btn10"
+                          id="1_10"
                           className="w-12 h-20 bg-gray-800"
                           onClick={openPopup}
                         >
@@ -162,14 +162,14 @@ const Bookinge = () => {
                         </ButtonComponent>
                         <div className="flex flex-col items-center gap-4">
                           <ButtonComponent
-                            id="btn11"
+                            id="1_11"
                             className="w-8 h-8 bg-yellow-500"
                             onClick={openPopup}
                           >
                             <p className="font-bold text-black">11</p>
                           </ButtonComponent>
                           <ButtonComponent
-                            id="btn12"
+                            id="1_12"
                             className="w-8 h-8 bg-yellow-500"
                             onClick={openPopup}
                           >
