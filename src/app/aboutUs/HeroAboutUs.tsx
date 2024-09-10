@@ -4,22 +4,22 @@ import Image from "next/image";
 
 const HeroAboutUs = () => {
   return (
-    <div className="w-full -mt-40 pt-48 pb-48 bg-hero-pattern rounded-bl-[200px]">
+    <div className="w-full -mt-40 xs:pt-20 lg:pt-48 xs:pb-20 lg:pb-48 bg-hero-pattern xs:rounded-bl-[100px] lg:rounded-bl-[200px]">
       <div className="flex flex-row w-full bg-opacity-80">
-        <div className="w-3/4 flex flex-col ">
-          <div className="pt-20 xs:pl-20 lg:pl-32">
-            <div className="text-white xs:font-medium lg:font-semibold text-7xl">
+        <div className="xs:w-5/6 lg:w-3/4 flex flex-col ">
+          <div className="pt-16 xs:pl-10 lg:pl-32">
+            <div className="text-white xs:font-medium lg:font-semibold xs:text-5xl lg:text-7xl">
               Everyday is a Coffee Day!
             </div>
-            <div className="text-white font-light text-2xl lg:pr-96 mt-8">
+            <div className="text-white xs:font-light lg:font-light xs:text-lg lg:text-2xl lg:pr-96 xs:mt-4 lg:mt-8">
               <p>
                 Boost your productivity and build your mood with a glass of
                 coffee at Notarich.
               </p>
             </div>
-            <div className="flex xs:flex-col lg:flex-row mt-20">
+            <div className="flex xs:flex-col lg:flex-row xs:mt-8 lg:mt-20">
               <Link href={"/booking"}>
-                <button className="flex flex-row text-white text-xl font-light bg-[#FF8A00] border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-3 px-8">
+                <button className="flex flex-row text-white xs:text-base lg:text-xl font-light bg-[#FF8A00] border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-2 xs:px-5 lg:px-8">
                   <Image
                     src="/table.png"
                     alt=""
@@ -31,7 +31,7 @@ const HeroAboutUs = () => {
                 </button>
               </Link>
               <Link href={"/menu/all"}>
-                <button className="flex flex-row text-white text-xl font-light bg-[#FF8A00] bg-opacity-50 border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-3 px-11 xs:mt-8 lg:mt-0 lg:ml-8">
+                <button className="flex flex-row text-white xs:text-base lg:text-xl font-light bg-[#FF8A00] bg-opacity-50 border-2 border-[#FF8A00] w-fit h-fit rounded-2xl py-2 xs:px-7 lg:px-11 xs:mt-4 lg:mt-0 lg:ml-8">
                   <Image
                     src="/bottle.png"
                     alt=""

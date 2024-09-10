@@ -26,8 +26,8 @@ const MenuPage = async () => {
             <HeroMenu />
             <div className="relative h-full flex flex-col justify-between mb-12">
               <div className="flex flex-col w-full sm:px-6 lg:px-20 -mt-80 pb-40">
-                <div className="flex flex-row mb-20 sm:px-6 lg:px-28">
-                  <p className="text-3xl font-semibold text-justify mb-10 text-black">
+                <div className="flex flex-row mb-20 xs:px-28 lg:px-28">
+                  <p className="xs:text-6xl lg:text-3xl font-semibold text-justify mb-10 text-black">
                     Our Popular Menu
                   </p>
                 </div>

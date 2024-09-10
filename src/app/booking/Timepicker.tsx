@@ -8,8 +8,8 @@ const TimePicker = ({ onTimeSelected }) => {
   const minutesArray = Array.from({ length: 60 }, (_, i) =>
     i.toString().padStart(2, "0")
   );
-  const secondsArray = Array.from({ length: 60 }, (_, i) =>
-    i.toString().padStart(2, "0")
+  const secondsArray = Array.from({ length: 1 }, (_, i) =>
+    i.toString().padStart(2, "00")
   );
 
   const [selectedHour, setSelectedHour] = useState("12");
@@ -60,13 +60,15 @@ const TimePicker = ({ onTimeSelected }) => {
         </div>
       </div>
       <button
-        className="bg-[#FF8A00] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        onClick={() =>
-          onTimeSelected(`${selectedHour}:${selectedMinute}:${selectedSecond}`)
-        }
+        className="bg-[#FF8A00] px-4 py-2 border rounded-lg text-white text-lg hover:scale-105"
+        onClick={() => {
+          onTimeSelected(`${selectedHour}:${selectedMinute}:${selectedSecond}`);
+        }}
       >
         Set Time
       </button>
+      {/* <p>{onTimeSelected}</p> */}
+      {/* <button onClick={handleSetTime}>Set Time</button> */}
     </div>
   );
 };

@@ -11,19 +11,21 @@ const UserLinks = () => {
         <>
           {session?.user.isAdmin && (
             <>
-              <Link href="/orders" className={`hover:text-yellow-300 mr-20 `}>
+              <Link href="/orders" className={`hover:text-yellow-300 `}>
                 Orders
               </Link>
-              <Link href="/bookings" className={`hover:text-yellow-300 `}>Bookings</Link>
+              <Link href="/bookings" className={`hover:text-yellow-300 `}>
+                Bookings
+              </Link>
             </>
           )}
 
-          <span className="mr-20 cursor-pointer" onClick={() => signOut()}>
+          <span className=" cursor-pointer" onClick={() => signOut()}>
             Logout
           </span>
         </>
       ) : (
-        <Link className="mr-20" href="/login">
+        <Link className="" href="/login">
           Login
         </Link>
       )}

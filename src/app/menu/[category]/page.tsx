@@ -32,10 +32,17 @@ const CategoryPage = async ({ params }: Props) => {
       <HeroMenu />
       <div className="relative h-full flex flex-col justify-between mb-12">
         <div className="flex flex-col w-full sm:px-6 lg:px-20 -mt-80 pb-40">
-          <div className="flex flex-row mb-20 sm:px-6 lg:px-28">
+          <div className="flex flex-row mb-20 sm:px-20 lg:px-28">
             <p className="text-3xl font-semibold text-justify mb-10 text-black">
               Our Popular Menu
             </p>
+            <Image
+              src="/stars.png"
+              alt="stars"
+              width={87}
+              height={87}
+              className="ml-4 -mt-8 mb-8"
+            />
           </div>
           <div className="mx-auto h-96 sm:px-6 lg:px-10 bg-[#212121] rounded-3xl">
             <PopularMenuItems />

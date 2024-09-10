@@ -2,11 +2,11 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import TimePicker from "./TimePicker";
+import TimePicker from "./timePicker";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
 
-const Popup = ({ isOpen, closePopup }) => {
+const Popup = ({ isOpen, closePopup, confirmReservation }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [reservationData, setReservationData] = useState({
@@ -33,51 +33,55 @@ const Popup = ({ isOpen, closePopup }) => {
   };
 
   const updateIsoDateTime = (date, time) => {
-    if (date && time) {
-      const [hour, minute, second] = time.split(":");
-      const newDate = new Date(date);
-      newDate.setHours(hour);
-      newDate.setMinutes(minute);
-      newDate.setSeconds(second);
-      setIsoDateTime(newDate.toISOString());
+    try {
+      if (date && time) {
+        const [hour, minute, second] = time.split(":");
+        const newDate = new Date(date);
+        newDate.setHours(hour);
+        newDate.setMinutes(minute);
+        newDate.setSeconds(second);
+        setIsoDateTime(newDate.toISOString());
+      }
+    } catch (e) {
+      console.log(e);
+    } finally {
+      console.log("isoDateTime:", isoDateTime);
     }
   };
 
-  const [selectedDuration, setSelectedDuration] = useState("30 Minutes");
+  const convertIsoToNormalDateTime = (isoDateTime) => {
+    const date = new Date(isoDateTime);
+
+    // Format the date to "YYYY-MM-DD"
+    const formattedDate = date.toLocaleDateString("en-CA"); // Example: "2024-09-09"
+
+    // Format the time to "HH:MM:SS"
+    const formattedTime = date.toLocaleTimeString("en-GB", {
+      hour12: false,
+      hour: "2-digit",
+      minute: "2-digit",
+      // second: "2-digit",
+    });
+
+    return {
+      date: formattedDate,
+      time: formattedTime,
+    };
+  };
+
+  const handleConvert = () => {
+    const { date, time } = convertIsoToNormalDateTime(isoDateTime);
+    console.log("Date:", date); // "2024-09-09"
+    console.log("Time:", time); // "14:30:45"
+  };
+
+  const [selectedDuration, setSelectedDuration] = useState(0);
   const [confirmationVisible, setConfirmationVisible] = useState(false);
   const [reservationSuccessVisible, setReservationSuccessVisible] =
     useState(false);
 
-  const handleConfirmReservation = async () => {
-    if (!session) {
-      router.push("/login");
-    } else {
-      try {
-        const res = await fetch("/api/bookings", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            kursis: [JSON.parse(reservationData.tableNumber)],
-            tanggalWaktu: isoDateTime,
-            durasi: selectedDuration,
-            statusBooking: "waiting",
-            userEmail: session.user.email,
-          }),
-        });
-
-        if (!res.ok) {
-          throw new Error("Failed to create booking");
-        }
-
-        const data = await res.json();
-        console.log("Booking created:", data);
-
-        setConfirmationVisible(true);
-        setReservationSuccessVisible(true);
-      } catch (err) {
-        console.error(err);
-      }
-    }
+  const handleConfirmReservation = () => {
+    confirmReservation(isoDateTime, selectedDuration);
   };
 
   if (!isOpen) return null;
@@ -111,30 +115,46 @@ const Popup = ({ isOpen, closePopup }) => {
                 Pilih Waktu Pemesanan
               </h3>
               <TimePicker onTimeSelected={handleTimeSelection} />
+              <p>{selectedTime}</p>
             </div>
             <div>
               <h3 className="font-semibold mb-2 text-center">
                 Durasi Pemesanan
               </h3>
               <div className="flex flex-col space-y-2 mx-4">
-                {["30 Minutes", "1 Hour", "1 Hour 30 Minutes", "2 Hours"].map(
-                  (duration) => (
-                    <button
-                      key={duration}
-                      onClick={() => setSelectedDuration(duration)}
-                      className={`w-full p-2 border rounded-lg ${
-                        selectedDuration === duration
-                          ? "bg-[#FF8A00] text-white"
-                          : ""
-                      }`}
-                    >
-                      {duration}
-                    </button>
-                  )
-                )}
+                {[
+                  { label: "30 Minutes", value: 30 },
+                  { label: "1 Hour", value: 60 },
+                  { label: "1 Hour 30 Minutes", value: 90 },
+                  { label: "2 Hours", value: 120 },
+                ].map(({ label, value }) => (
+                  <button
+                    key={value}
+                    onClick={() => setSelectedDuration(value)}
+                    className={`w-full p-2 border rounded-lg ${
+                      selectedDuration === value
+                        ? "bg-[#FF8A00] text-white"
+                        : ""
+                    }`}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
           </div>
+          <p>{isoDateTime}</p>
+          <p>{selectedDuration}</p>
+          <h3>Konfirmasi Reservasi:</h3>
+          <p>
+            <strong>Tanggal:</strong>{" "}
+            {convertIsoToNormalDateTime(isoDateTime).date}
+          </p>
+          <p>
+            <strong>Waktu:</strong>{" "}
+            {convertIsoToNormalDateTime(isoDateTime).time}
+          </p>
+          <button onClick={handleConvert}>Konfirmasi Reservasi</button>
 
           {confirmationVisible && (
             <div className="mt-4 bg-gray-100 p-4 rounded">
@@ -154,6 +174,8 @@ const Popup = ({ isOpen, closePopup }) => {
             </button>
             <button
               className="bg-[#FF8A00] px-4 py-2 rounded text-white"
+              // onClick={handleConfirmReservation}
+              // onClick={confirmReservation}
               onClick={handleConfirmReservation}
             >
               Konfirmasi Reservasi

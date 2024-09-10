@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  width: 100%;
+  margin: 0;
+}
+
+/* .jakarta_sans {
+  font-family: var(--plus-jakarta-sans);
+}
+
+.bruno_ace {
+  font-family: var(--bruno-ace);
+} */

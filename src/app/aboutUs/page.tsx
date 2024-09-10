@@ -12,7 +12,7 @@ const AboutUs = () => {
       <Fragment>
         <div className="justify-center items-center">
           <div className="flex flex-col  font-jakarta_sans">
-            <HeroAboutUs />
+            {/* <HeroAboutUs /> */}
             <AppOverview />
           </div>
         </div>

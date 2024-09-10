@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
     "./index.html",
@@ -25,10 +25,10 @@ module.exports = {
         "heromenu-pattern": "url('../../public/bg-heromenu.png')",
         login: "url('../../public/login2.png')",
       },
-    },
-    fontFamily: {
-      jakarta_sans: ["Plus Jakarta Sans", "sans-serif"],
-      bruno_ace: ["Bruno Ace", "sans-serif"],
+      fontFamily: {
+        jakarta_sans: ['var(--plus-jakarta-sans)'],
+        bruno_ace: ['var(--bruno-ace)'],
+      },
     },
   },
   plugins: [],

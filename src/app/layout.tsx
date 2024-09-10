@@ -12,6 +12,19 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Fragment } from "react";
 import { usePathname } from "next/navigation"; // Import usePathname
+import { Plus_Jakarta_Sans, Bruno_Ace } from "next/font/google";
+
+const plus_jakarta_sans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["300"],
+  variable: "--plus-jakarta-sans",
+});
+
+const bruno_ace = Bruno_Ace({
+  subsets: ["latin"],
+  weight: ["400"],
+  variable: "--bruno-ace",
+});
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,11 +43,13 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body
+        className={`${inter.className} ${bruno_ace.variable} ${plus_jakarta_sans.variable}`}
+      >
         <div className="flex w-full">
           <Fragment>
-            <div className="flex flex-initial justify-center items-center font-jakarta_sans">
-              <div className="flex flex-col">
+            <div className="flex w-full justify-center items-center font-jakarta_sans">
+              <div className="flex flex-col w-full">
                 <AuthProvider>
                   <QueryProvider>
                     {/* <Notification /> */}
