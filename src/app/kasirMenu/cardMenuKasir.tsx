@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const CardMenuAll = (props: any) => {
+const CardMenuKasir = (props: any) => {
   const { children } = props;
   return (
     <div className="flex flex-col bg-white rounded-3xl shadow-xl overflow-hidden xs:px-3 lg:px-6 xs:py-4 lg:py-6 h-full">
@@ -64,8 +64,8 @@ const Footer = (props: any) => {
   );
 };
 
-CardMenuAll.Header = Header;
-CardMenuAll.Body = Body;
-CardMenuAll.Footer = Footer;
+CardMenuKasir.Header = Header;
+CardMenuKasir.Body = Body;
+CardMenuKasir.Footer = Footer;
 
-export default CardMenuAll;
+export default CardMenuKasir;

@@ -1,7 +1,6 @@
 import Image from "next/image";
-import Button from "../Elements/Button";
 
-const CardMenuCat = (props) => {
+const CardMenuCat = (props: any) => {
   const { children } = props;
   return (
     <div className="flex flex-col bg-white rounded-3xl shadow-xl overflow-hidden px-6 py-6 h-full">
@@ -10,7 +9,7 @@ const CardMenuCat = (props) => {
   );
 };
 
-const Header = (props) => {
+const Header = (props: any) => {
   const { image } = props;
   return (
     <div>
@@ -25,7 +24,7 @@ const Header = (props) => {
   );
 };
 
-const Body = (props) => {
+const Body = (props: any) => {
   const { children, description, name, price } = props;
   return (
     <div className="">
@@ -42,7 +41,7 @@ const Body = (props) => {
   );
 };
 
-const Footer = (props) => {
+const Footer = (props: any) => {
   const { price, handleAddToCart, id } = props;
   return (
     <div className="mt-4">

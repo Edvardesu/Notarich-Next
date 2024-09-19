@@ -1,8 +1,8 @@
 import Label from "./Label";
 import Input from "./Input";
-import { Children, forwardRef } from "react";
+import { forwardRef } from "react";
 
-const InputForm = forwardRef((props, ref) => {
+const InputForm = forwardRef((props: any, ref: any) => {
   const { label, name, type, placeholder, children } = props;
   return (
     <div className="mb-6">
@@ -10,12 +10,14 @@ const InputForm = forwardRef((props, ref) => {
         <div className="w-1/2 flex flex-row justify-start">
           <Label htmlFor={name}>{label}</Label>
         </div>
-        <div className="w-1/2 flex flex-row justify-end">
-        {children}</div>
+        <div className="w-1/2 flex flex-row justify-end">{children}</div>
       </div>
       <Input name={name} placeholder={placeholder} ref={ref} type={type} />
     </div>
   );
 });
+
+// Add displayName for easier debugging
+InputForm.displayName = "InputForm";
 
 export default InputForm;

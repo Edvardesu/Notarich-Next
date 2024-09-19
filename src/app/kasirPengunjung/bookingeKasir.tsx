@@ -1,12 +1,12 @@
 "use client";
 // Bookinge.js
 import { useState } from "react";
-import Popup from "./popup";
-import ButtonComponent from "./buttonComponent";
+import Popup from "../booking/popup";
+import ButtonComponent from "../booking/buttonComponent";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-const Bookinge = () => {
+const BookingeKasir = () => {
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [selectedFloor, setSelectedFloor] = useState(1); // Default to Lantai 1
   const { data: session, status } = useSession();
@@ -1714,4 +1714,4 @@ const Bookinge = () => {
   );
 };
 
-export default Bookinge;
+export default BookingeKasir;

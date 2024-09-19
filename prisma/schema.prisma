@@ -61,7 +61,7 @@ model VerificationToken {
 model Category {
   id        String    @id @default(cuid())
   createdAt DateTime  @default(now())
-  title     String
+  title     String    @unique
   desc      String
   color     String
   img       String

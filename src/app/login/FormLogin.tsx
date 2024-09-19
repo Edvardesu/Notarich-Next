@@ -1,40 +1,38 @@
 import InputForm from "./Input";
 import Button from "./Button";
 import { useRef, useEffect, useState } from "react";
-import axios from "axios";
 
 const FormLogin = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
-
   const [loginFailed, setLoginFailed] = useState("");
+  const usernameRef = useRef<HTMLInputElement | null>(null); // Set the correct ref type
 
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
 
-  const handleLogin = (event) => {
+  const handleLogin = (event: any) => {
     event.preventDefault();
-    // localStorage.setItem("email", event.target.email.value);
-    // localStorage.setItem("password", event.target.password.value);
-    // window.location.href = "/products";
+
     const data = {
       username: event.target.username.value,
       password: event.target.password.value,
     };
-    login(data, (status, res) => {
+
+    login(data, (status: boolean, res: any) => {
       if (status) {
         localStorage.setItem("token", res);
         window.location.href = "/menu/all";
       } else {
-        setLoginFailed(res.response.data);
+        setLoginFailed(res.response?.data || "Login failed");
       }
     });
   };
-  const usernameRef = useRef(null);
 
   useEffect(() => {
-    usernameRef.current.focus();
+    usernameRef.current?.focus(); // Optional chaining to safely handle null
   }, []);
+
   return (
     <form onSubmit={handleLogin} className="mt-8">
       <InputForm
@@ -53,15 +51,11 @@ const FormLogin = () => {
           placeholder="*****"
           name="password"
         >
-          <button
-            onClick={togglePasswordVisibility}
-            className="text-[#666666]"
-          >
-            Hide
+          <button onClick={togglePasswordVisibility} className="text-[#666666]">
+            {passwordVisible ? "Hide" : "Show"}
           </button>
         </InputForm>
       </div>
-      {/* {errorMessage && <p className="text-red-500 mt-2">{errorMessage}</p>} */}
       <button
         className="mt-6 w-full bg-[#FF8A00] text-white font-bold py-3 px-4 rounded-full"
         type="submit"
@@ -76,3 +70,25 @@ const FormLogin = () => {
 };
 
 export default FormLogin;
+
+// Define or import the login function
+const login = async (data: { username: string; password: string }, callback: (status: boolean, res: any) => void) => {
+  try {
+    const response = await fetch("/api/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (!response.ok) {
+      throw new Error("Login failed");
+    }
+
+    const result = await response.json();
+    callback(true, result.token); // Assuming the token is in result.token
+  } catch (error) {
+    callback(false, error);
+  }
+};

@@ -42,9 +42,9 @@ const CartPage = () => {
   };
 
   return (
-    <div className="h-full flex flex-col  lg:flex-row align-bottom">
+    <div className="lg:min-h-screen flex flex-col  lg:flex-row align-bottom">
       {/* PRODUCTS CONTAINER */}
-      <div className="p-4 text-black flex flex-col justify-center overflow-scroll lg:h-full lg:w-2/3 2xl:w-1/2 lg:px-20 xl:px-40">
+      <div className="p-4 text-black flex flex-col justify-center overflow-scroll lg:h-full lg:w-2/3 2xl:w-1/2 lg:px-20 xl:px-40 lg:min-h-screen">
         {/* SINGLE ITEM */}
         {products.map((item) => (
           <div className="flex items-center justify-between mb-4" key={item.id}>
@@ -68,7 +68,7 @@ const CartPage = () => {
         ))}
       </div>
       {/* PAYMENT CONTAINER */}
-      <div className=" p-4 bg-hero-pattern text-white flex flex-col gap-4 justify-center lg:h-full lg:w-1/3 2xl:w-1/2 lg:px-20 xl:px-40 2xl:text-xl 2xl:gap-6">
+      <div className=" p-4 bg-hero-pattern text-white flex flex-col gap-4 justify-center lg:h-full lg:w-1/3 2xl:w-1/2 lg:px-20 xl:px-40 2xl:text-xl 2xl:gap-6 lg:min-h-screen">
         <div className="flex justify-between">
           <span className="">Subtotal ({totalItems} items)</span>
           <span className="">Rp{totalPrice}</span>
@@ -76,7 +76,7 @@ const CartPage = () => {
         <hr className="my-2" />
         <div className="flex justify-between">
           <span className="">TOTAL(INCL. VAT)</span>
-          <span className="font-bold">${totalPrice}</span>
+          <span className="font-bold">Rp{totalPrice}</span>
         </div>
         <button
           className="bg-[#FF8A00] text-white p-3 rounded-md w-1/2 self-end"

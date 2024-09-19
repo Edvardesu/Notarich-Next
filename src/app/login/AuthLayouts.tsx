@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const AuthLayout = (props) => {
+const AuthLayout = (props: any) => {
   const { children, title, type } = props;
 
   return (
@@ -68,7 +68,7 @@ const AuthLayout = (props) => {
   );
 };
 
-const Navigation = ({ type }) => {
+const Navigation = ({ type }: any) => {
   if (type === "login") {
     return (
       <>
@@ -76,7 +76,7 @@ const Navigation = ({ type }) => {
           Login
         </h2>
         <p className="text-normal mt-5 text-center">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link href="/register" className="font-semibold text-black underline">
             Create an account
           </Link>

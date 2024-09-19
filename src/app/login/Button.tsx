@@ -1,4 +1,4 @@
-const Button = (props) => {
+const Button = (props: any) => {
     const {
       children,
       classname = "bg-black",

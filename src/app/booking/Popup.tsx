@@ -6,7 +6,15 @@ import TimePicker from "./timePicker";
 import Image from "next/image";
 import "react-datepicker/dist/react-datepicker.css";
 
-const Popup = ({ isOpen, closePopup, confirmReservation }) => {
+const Popup = ({
+  isOpen,
+  closePopup,
+  confirmReservation,
+}: {
+  isOpen: boolean;
+  closePopup: () => void;
+  confirmReservation: any;
+}) => {
   const { data: session, status } = useSession();
   const router = useRouter();
   const [reservationData, setReservationData] = useState({
@@ -22,17 +30,17 @@ const Popup = ({ isOpen, closePopup, confirmReservation }) => {
   const [selectedTime, setSelectedTime] = useState("");
   const [isoDateTime, setIsoDateTime] = useState("");
 
-  const handleTimeSelection = (time) => {
+  const handleTimeSelection = (time: any) => {
     setSelectedTime(time);
     updateIsoDateTime(selectedDate, time);
   };
 
-  const handleDateChange = (date) => {
+  const handleDateChange = (date: any) => {
     setSelectedDate(date);
     updateIsoDateTime(date, selectedTime);
   };
 
-  const updateIsoDateTime = (date, time) => {
+  const updateIsoDateTime = (date: any, time: any) => {
     try {
       if (date && time) {
         const [hour, minute, second] = time.split(":");
@@ -49,7 +57,7 @@ const Popup = ({ isOpen, closePopup, confirmReservation }) => {
     }
   };
 
-  const convertIsoToNormalDateTime = (isoDateTime) => {
+  const convertIsoToNormalDateTime = (isoDateTime: any) => {
     const date = new Date(isoDateTime);
 
     // Format the date to "YYYY-MM-DD"
@@ -81,7 +89,8 @@ const Popup = ({ isOpen, closePopup, confirmReservation }) => {
     useState(false);
 
   const handleConfirmReservation = () => {
-    confirmReservation(isoDateTime, selectedDuration);
+    confirmReservation(isoDateTime, Number(selectedDuration));
+    setReservationSuccessVisible(true);
   };
 
   if (!isOpen) return null;
@@ -94,7 +103,7 @@ const Popup = ({ isOpen, closePopup, confirmReservation }) => {
             className="absolute top-2 right-2 text-2xl font-bold"
             onClick={closePopup}
           >
-            &times;
+            &times; 
           </button>
           <h2 className="text-xl font-semibold mb-4">Order untuk Kapan ya?</h2>
 

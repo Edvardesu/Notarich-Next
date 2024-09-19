@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 
-const Input = forwardRef((props, ref) => {
+const Input = forwardRef((props: any, ref: any) => {
   const { type, labelForm, placeholder, name, children } = props;
   return (
     <>
@@ -18,10 +18,13 @@ const Input = forwardRef((props, ref) => {
         placeholder={placeholder}
         name={name}
         id={name}
-        ref={ref}
+        ref={ref as React.Ref<HTMLInputElement>}
       />
     </>
   );
 });
+
+// Add a displayName for debugging purposes
+Input.displayName = "Input";
 
 export default Input;

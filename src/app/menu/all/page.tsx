@@ -5,21 +5,38 @@ import React, { Fragment } from "react";
 import CardMenuAll from "./CardMenuAll";
 import HeroMenu from "@/fragments/HeroMenu";
 import PopularMenuItems from "../PopularMenuItems";
+import { prisma } from "@/utils/connect";
+import { Product } from "@prisma/client";
 
-const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/products", {
-    cache: "no-store",
-  });
+// const getData = async () => {
+//   const res = await fetch("http://localhost:3000/api/products", {
+//     cache: "no-store",
+//   });
 
-  if (!res.ok) {
-    throw new Error("Failed!");
+//   if (!res.ok) {
+//     throw new Error("Failed!");
+//   }
+
+//   return res.json();
+// };
+
+const getData = async (searchParams: any) => {
+  try {
+    const products = await prisma.product.findMany({
+      where: {
+        ...(searchParams ? { catSlug: searchParams } : {}),
+      },
+    });
+
+    return products;
+  } catch (err) {
+    return [];
   }
-
-  return res.json();
 };
 
-const AllMenuPage = async () => {
-  const products: ProductType[] = await getData();
+const AllMenuPage = async ({ searchParams }: { searchParams: any }) => {
+  const params = searchParams;
+  const products: Product[] = await getData(params.cat);
   return (
     <>
       <HeroMenu />

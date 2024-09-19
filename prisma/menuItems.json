@@ -1,0 +1,340 @@
+{
+  "menuItems": [
+    {
+      "id": 1,
+      "category": "Mocktail",
+      "name": "The Trial",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "24K",
+      "image": "../../../public/menu/Thetrial.jpg"
+    },
+    {
+      "id": 2,
+      "category": "Snack",
+      "name": "Tahu Cabe Garam",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "15K",
+      "image": "../../../public/menu/TahuCabeGaram.jpg"
+    },
+    {
+      "id": 3,
+      "category": "Refresher",
+      "name": "Strawberry Mojito",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Strawberrymojito.jpg"
+    },
+    {
+      "id": 4,
+      "category": "Frappe",
+      "name": "Strawberry Banana Frappe",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "26K",
+      "image": "../../../public/menu/Strawberrybananafrappe.jpg"
+    },
+    {
+      "id": 5,
+      "category": "Snack",
+      "name": "Chicken Wings",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "20K",
+      "image": "../../../public/menu/SpicyChickenWings.jpg"
+    },
+    {
+      "id": 6,
+      "category": "Snack",
+      "name": "Spicy Chicken Skin",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "15K",
+      "image": "../../../public/menu/SpicyChickenSkin.jpg"
+    },
+    {
+      "id": 7,
+      "category": "Main Course",
+      "name": "Spaghetti Carbonara",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "26K",
+      "image": "../../../public/menu/SpaghettiCarbonara.jpg"
+    },
+    {
+      "id": 8,
+      "category": "Main Course",
+      "name": "Spaghetti Bolognese",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "26K",
+      "image": "../../../public/menu/SpaghettiBolognese.jpg"
+    },
+    {
+      "id": 9,
+      "category": "Snack",
+      "name": "Redvelvet Cake",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/RedvelvetCake.jpg"
+    },
+    {
+      "id": 10,
+      "category": "Milk Based",
+      "name": "Red Velvet",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "20K",
+      "image": "../../../public/menu/Redvelvet.jpg"
+    },
+    {
+      "id": 11,
+      "category": "Snack",
+      "name": "Potato Dynamite",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "15K",
+      "image": "../../../public/menu/PotatoDynamite.jpg"
+    },
+    {
+      "id": 12,
+      "category": "Mocktail",
+      "name": "Pinksheet",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Pinksheet.jpg"
+    },
+    {
+      "id": 13,
+      "category": "Mocktail",
+      "name": "Objection",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Objection.jpg"
+    },
+    {
+      "id": 14,
+      "category": "Main Course",
+      "name": "Nasi Paru Gongso",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "28K",
+      "image": "../../../public/menu/NasiParuGongso.jpg"
+    },
+    {
+      "id": 15,
+      "category": "Main Course",
+      "name": "Nasi Goreng Notarich",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "25K",
+      "image": "../../../public/menu/NasiGorengNotarich.jpg"
+    },
+    {
+      "id": 16,
+      "category": "Frappe",
+      "name": "Mocha Frappe",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "24K",
+      "image": "../../../public/menu/Mochafrappe.jpg"
+    },
+    {
+      "id": 17,
+      "category": "Snack",
+      "name": "Mix Platter",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "25K",
+      "image": "../../../public/menu/MixPlatter.jpg"
+    },
+    {
+      "id": 18,
+      "category": "Snack",
+      "name": "Mie Goreng Notarich",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "24K",
+      "image": "../../../public/menu/MieGorengNotarich.jpg"
+    },
+    {
+      "id": 19,
+      "category": "Mocktail",
+      "name": "Midnight",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Midnight.jpg"
+    },
+    {
+      "id": 20,
+      "category": "Snack",
+      "name": "Mendoan",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "15K",
+      "image": "../../../public/menu/Mendoan.jpg"
+    },
+    {
+      "id": 21,
+      "category": "Milk Based",
+      "name": "Matcha Latte",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "24K",
+      "image": "../../../public/menu/Mendoan.jpg"
+    },
+    {
+      "id": 22,
+      "category": "Mocktail",
+      "name": "Mango on the Court",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Matchalatte.jpg"
+    },
+    {
+      "id": 23,
+      "category": "Tea",
+      "name": "Lychee Tea",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "18K",
+      "image": "../../../public/menu/Lycheetea.jpg"
+    },
+    {
+      "id": 24,
+      "category": "Refresher",
+      "name": "Lychee Mojito",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Lycheemojito.jpg"
+    },
+    {
+      "id": 25,
+      "category": "Snack",
+      "name": "Loaded Fries",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "18K",
+      "image": "../../../public/menu/LoadedFries.jpg"
+    },
+    {
+      "id": 26,
+      "category": "Tea",
+      "name": "Limeberry Tea",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "20K",
+      "image": "../../../public/menu/Limeberrytea.jpg"
+    },
+    {
+      "id": 27,
+      "category": "Mocktail",
+      "name": "Lightsabre",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "24K",
+      "image": "../../../public/menu/Lightsabre.jpg"
+    },
+    {
+      "id": 28,
+      "category": "Tea",
+      "name": "Lemon Tea",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "18K",
+      "image": "../../../public/menu/Lemontea.jpg"
+    },
+    {
+      "id": 29,
+      "category": "Mocktail",
+      "name": "Landlord",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/Landlord.jpg"
+    },
+    {
+      "id": 30,
+      "category": "Coffee",
+      "name": "Kopi Susu",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "20K",
+      "image": "../../../public/menu/kopisusu.jpg"
+    },
+    {
+      "id": 31,
+      "category": "Main Course",
+      "name": "Grilled Chicken",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "28K",
+      "image": "../../../public/menu/GrilledChicken.jpg"
+    },
+    {
+      "id": 32,
+      "category": "Main Course",
+      "name": "Dori Sambal Matah",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "32K",
+      "image": "../../../public/menu/DoriSambalMatah.jpg"
+    },
+    {
+      "id": 33,
+      "category": "Frappe",
+      "name": "Cookies n Cream",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/cookiesncream.jpg"
+    },
+    {
+      "id": 34,
+      "category": "Snack",
+      "name": "Chocolate Cake",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "24K",
+      "image": "../../../public/menu/chocolatecake.jpg"
+    },
+    {
+      "id": 35,
+      "category": "Milk Based",
+      "name": "Chocolate",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/chocolate.jpg"
+    },
+    {
+      "id": 36,
+      "category": "Main Course",
+      "name": "Chicken Salted Egg",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "28K",
+      "image": "../../../public/menu/ChickenSaltedEgg.jpg"
+    },
+    {
+      "id": 37,
+      "category": "Main Course",
+      "name": "Chicken Parmigiana",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "29K",
+      "image": "../../../public/menu/chickenparmigiana.jpg"
+    },
+    {
+      "id": 38,
+      "category": "Main Course",
+      "name": "Chicken Cordon Blue",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "30K",
+      "image": "../../../public/menu/chickencordonblue.jpg"
+    },
+    {
+      "id": 39,
+      "category": "Frappe",
+      "name": "Caramel Frappucino",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "25K",
+      "image": "../../../public/menu/caramelfrappucino.jpg"
+    },
+    {
+      "id": 40,
+      "category": "Coffee",
+      "name": "Caffe Latte",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "22K",
+      "image": "../../../public/menu/cafelatte.jpg"
+    },
+    {
+      "id": 41,
+      "category": "Main Course",
+      "name": "Beef Teriyaki",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "33K",
+      "image": "../../../public/menu/beefteriyaki.jpg"
+    },
+    {
+      "id": 42,
+      "category": "Coffee",
+      "name": "Americano",
+      "description": "Kopi espresso dengan susu panas",
+      "price": "20K",
+      "image": "../../../public/menu/americano.jpg"
+    }
+  ]
+}

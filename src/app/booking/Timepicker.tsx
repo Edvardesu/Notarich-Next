@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./timepicker.css";
 
-const TimePicker = ({ onTimeSelected }) => {
+interface TimePickerProps {
+  onTimeSelected: (time: string) => void;
+}
+
+const TimePicker = ({ onTimeSelected }: TimePickerProps) => {
   const hoursArray = Array.from({ length: 24 }, (_, i) =>
     i.toString().padStart(2, "0")
   );
