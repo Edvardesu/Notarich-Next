@@ -1,3 +1,4 @@
+"use client";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -103,7 +104,7 @@ const Popup = ({
             className="absolute top-2 right-2 text-2xl font-bold"
             onClick={closePopup}
           >
-            &times; 
+            &times;
           </button>
           <h2 className="text-xl font-semibold mb-4">Order untuk Kapan ya?</h2>
 
